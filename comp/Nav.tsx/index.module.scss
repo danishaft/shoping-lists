@@ -1,0 +1,35 @@
+@use '../../styles/global' as g;
+@use '../../styles/responsive' as r;
+
+    .header{
+        background: g.$primary-white;
+        height: 100vh;
+        padding: 2em 0em;
+        @include g.flex-c;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .logo{
+        margin: 0 .7em;
+    }
+    .nav_list{
+        width: 100%;
+    }
+    .cart_Icon {
+        background: g.$primary-orange;
+        border-radius: 50%;
+        width: 2em;
+        height: 2em;
+        @include g.flex-c;
+        align-items: center;
+    }
+    .cart_Icon > * {
+        color: #ffff;
+    }
+
+    //responsiveness
+    @include r.tablet{
+        .header{
+            padding: 2.5em, 0em;
+        }
+    }
