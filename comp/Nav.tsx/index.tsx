@@ -1,3 +1,6 @@
+import { useSelector, useDispatch } from "react-redux";
+import {toggle} from '../../lib/redux/slice/toggler'
+import type {RootState} from '../../lib/redux/store/store'
 import Image from "next/image"
 import logo from '../../public/assests/logo.svg'
 import styles from './index.module.scss'
@@ -8,6 +11,9 @@ import { BiBarChartSquare } from "react-icons/bi";
 
 import NavItem from "../NavItem";
 const Nav = () => {
+  const togglerState = useSelector((state: RootState) => state.reducer.toggler.value) 
+  const dispatch = useDispatch()
+  
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
@@ -27,7 +33,7 @@ const Nav = () => {
           <BiBarChartSquare/>
         </NavItem>
       </nav>
-      <div className={styles.cart_Icon}>
+      <div className={styles.cart_Icon} onClick={()=> dispatch(toggle(!togglerState))}>
         <AiOutlineShoppingCart/>
       </div>
     </header>

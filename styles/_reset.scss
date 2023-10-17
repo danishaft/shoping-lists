@@ -1,5 +1,8 @@
+
 @forward "global";
 @forward "responsive";
+ @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
 /* Remove default margin */
 body,
 h1,
@@ -41,8 +44,7 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
-//   font-family: 'Work Sans', sans-serif;
-//   color: #150D57;
+  font-family: 'Quicksand', sans-serif;
 }
 
 /* A elements that don't have a class get default styles */

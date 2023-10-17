@@ -10,7 +10,7 @@ const initialState: ItemState = {
 }
 
 export const addItem = createSlice({
-    name: 'items',
+    name: 'addItems',
     initialState,
     reducers: {
         createItem: (state, action: PayloadAction<object>) => {

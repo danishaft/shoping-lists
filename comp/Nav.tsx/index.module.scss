@@ -4,6 +4,7 @@
     .header{
         background: g.$primary-white;
         height: 100vh;
+        width: 15%;
         padding: 2em 0em;
         @include g.flex-c;
         align-items: center;
@@ -21,7 +22,9 @@
         width: 2em;
         height: 2em;
         @include g.flex-c;
+        justify-content: center;
         align-items: center;
+        cursor: pointer;
     }
     .cart_Icon > * {
         color: #ffff;
@@ -30,6 +33,16 @@
     //responsiveness
     @include r.tablet{
         .header{
-            padding: 2.5em, 0em;
+            width: 13%;
+        }
+    }
+    @include r.small-desktop{
+        .header{
+            width: 6%;
+        }
+    }
+    @include r.monitor{
+        .header{
+            width: 4%;
         }
     }

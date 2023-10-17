@@ -4,6 +4,8 @@ import '../styles/index.scss'
 import { store } from '@/lib/redux/store/store'
 import type { Metadata } from 'next'
 import {Provider as ReduxProvider} from "react-redux"
+import Cart from '@/comp/Cart'
+
 
  const metadata: Metadata = {
   title: 'Shopping List App',
@@ -20,8 +22,12 @@ export default function RootLayout({
         <body>
           <ReduxProvider store={store}>
             <Nav/>
-            {children}
-            <section>cart</section>
+            <section id='main_section'>
+              {children}
+                <aside>
+                  <Cart />
+                </aside>
+            </section>
           </ReduxProvider>
         </body>
       </html>

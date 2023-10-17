@@ -1,6 +1,7 @@
+import Items from "@/comp/Items";
 
 export default function Home() {
   return (
-    <div>Home page</div>
+    <Items/>
   )
 }

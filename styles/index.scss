@@ -4,5 +4,29 @@
 
 body{
     display: flex;
-    justify-content: space-between;
+    width: 100%;
+}
+body #main_section {
+    display: flex;
+    width: 100%;
+    position: relative;
+}
+body aside{
+    width: 100%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top: 0;
+}
+
+@media (min-width: 48em){
+    body aside{
+        width: 45%;
+    }
+}
+@media (min-width: 64em){
+    body aside {
+        width: 50%;
+        position: unset;
+    }
 }
