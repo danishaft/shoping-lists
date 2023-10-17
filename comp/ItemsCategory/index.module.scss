@@ -1,0 +1,16 @@
+@use '../../styles/responsive' as r;
+@use '../../styles/global' as g;
+
+.category{
+    width: 100%;
+    margin-bottom: 1em
+}
+.category h2{
+    @include g.text-base;
+    margin-bottom: .5em;
+}
+.category .list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+}
