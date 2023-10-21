@@ -1,0 +1,47 @@
+@use '../../styles/global' as g;
+@use '../../styles/responsive' as r;
+
+.list_card{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2em;
+}
+.list_card p{
+    @include g.text-base;
+    font-weight: 600;
+}
+.count{
+    border: 2px solid g.$primary-orange;
+    background: none;
+    border-radius: 12px;
+    padding: .1rem .7rem;
+    @include g.text-sm;
+    text-align: center;
+    color: g.$primary-orange;
+    font-weight: 600;
+}
+.list_card .countSec_open{
+    background: #fff;
+    border-radius: 10px;
+    @include g.flex-r;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: .2em;
+    gap: .2em;
+}
+.countSec_open .delete{
+    @include g.flex-r;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    background: g.$primary-orange;
+    color: #fff;
+    padding: .4em .25em;
+}
+.countSec_open .count_logic{
+    @include g.flex-r;
+    justify-content: space-between;
+    align-items: center;
+    color: g.$primary-orange;
+    gap: .5em;
+}

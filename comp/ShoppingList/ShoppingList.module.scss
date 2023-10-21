@@ -1,0 +1,52 @@
+@use '../../styles/responsive' as r;
+@use '../../styles/global' as g;
+
+.cart_sec {
+    @include g.flex-c;
+    justify-content: space-between;
+    background: g.$secondary-brown;
+    width: 100%;
+    height: 100vh;
+    padding: 3em 0 0 0;
+}
+.cont{
+    width: 80%;
+    margin: 0 auto;
+}
+.bottom{
+    background: #FFF;
+    width: 100%;
+    padding: 1.5em 0;
+}
+.bottom .input_container{
+    width: 80%;
+    margin: auto;
+    border: 2px solid g.$primary-orange;
+    border-radius: 12px;
+    @include g.flex-r;
+}
+.input_container input{
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    padding: 0 1em;
+}
+.input_container input:focus {
+    box-shadow: none !important;
+    border: none;
+    outline: none;
+}
+.input_container .btn{
+    @include g.text-header;
+    color: #FFF;
+    background: g.$primary-orange;
+    padding: .5em .7em;
+    border-radius: 10px;
+}
+//breakpoints
+@include r.tablet{
+    .cart_sec{
+        // padding: 2em;
+    }
+}

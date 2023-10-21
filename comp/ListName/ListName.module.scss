@@ -1,0 +1,19 @@
+@use '../../styles/global' as g;
+@use '../../styles/responsive' as r;
+
+.list_name{
+    margin: 1em 0;
+    @include g.flex-r;
+    justify-content: space-between;
+    @include g.text-bg0;
+}
+.list_name input{
+    border: none;
+    background: g.$secondary-brown;
+}
+.list_name input:focus{
+    outline: none;
+}
+.list_name .icon{
+    cursor: pointer;
+}

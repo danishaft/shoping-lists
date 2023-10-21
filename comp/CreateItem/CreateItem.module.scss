@@ -1,0 +1,24 @@
+@use '../../styles/responsive' as r;
+@use '../../styles/global' as g;
+.createItem_sec{
+    background: #fff;
+    @include g.flex-c;
+    justify-content: space-between;
+    width: 100%;
+    height: 100vh;
+    padding: 2em 0 0 0;
+}
+.cont{
+    width: 80%;
+    margin: 0 auto;
+}
+.cont h2{
+    @include g.text-bg0;
+}
+.bottom{
+    background: #FFF;
+    width: 100%;
+    padding: 1.5em 0;
+    @include g.flex-r;
+    gap: 1em;
+}
