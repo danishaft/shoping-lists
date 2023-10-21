@@ -15,6 +15,21 @@
 .cont h2{
     @include g.text-bg0;
 }
+.cont label{
+    color: g.$primary-black;
+    @include g.text-sm;
+    font-weight: bold;
+    margin-bottom: 1em;
+}
+.cont .input{
+    border: 2px solid #BDBDBD;
+    color: #BDBDBD;
+    border-radius: 7px;
+    padding: 1em 1em;
+    @include g.text-sm;
+    width: 100%;
+    margin-bottom: .5em;
+}
 .bottom{
     background: #FFF;
     width: 100%;
