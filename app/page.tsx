@@ -1,4 +1,4 @@
-import Items from "@/comp/Items";
+import {Items} from "@/comp";
 
 export default function Home() {
   return (

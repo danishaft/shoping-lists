@@ -1,10 +1,10 @@
 'use client'
-import Nav from '@/comp/Nav.tsx'
+import {Nav} from '@/comp'
 import '../styles/index.scss'
 import { store } from '@/lib/redux/store/store'
 import type { Metadata } from 'next'
 import {Provider as ReduxProvider} from "react-redux"
-import Cart from '@/comp/Cart'
+import {Cart} from '@/comp'
 
 
  const metadata: Metadata = {
