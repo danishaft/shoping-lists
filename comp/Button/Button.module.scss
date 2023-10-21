@@ -1,0 +1,8 @@
+
+@use '../../styles/global' as g;
+
+.btn{
+    padding: .8em 1em;
+    border-radius: 12px;
+    @include g.text-header;
+}

@@ -1,0 +1,39 @@
+@use '../../styles/responsive' as r;
+@use '../../styles/global' as g;
+
+.card{
+    background: #80485B;
+    border-radius: 1em;
+    display: flex;
+    justify-content: space-between;
+    // max-width: 20em;
+    padding: .5em 0;
+}
+.card .img{
+    margin-top: -2rem;
+    width: 30%;
+    @include g.flex-r;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+.card .text{
+    width: 63%;
+    @include g.flex-c;
+    justify-content: center;
+    gap: .8em;
+    border-radius: .8rem; 
+}
+.card .text p{
+    @include g.text-header;
+    color: #fff;
+    text-wrap: wrap;
+}
+.card .text .btn{
+    color: g.$primary-black;
+    background: #fff;
+    @include g.text-sm;
+    border-radius: .8em;
+    border: none;
+    padding: .4em 1em;
+    width: 7em;
+}
