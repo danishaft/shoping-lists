@@ -1,7 +1,8 @@
 'use client'
 import {Nav} from '@/comp'
 import '../styles/index.scss'
-import { store } from '@/lib/redux/store/store'
+import { store, persistor } from '@/lib/redux/store/store'
+import { PersistGate } from 'redux-persist/integration/react'
 import type { Metadata } from 'next'
 import {Provider as ReduxProvider} from "react-redux"
 import {Cart} from '@/comp'
@@ -21,13 +22,15 @@ export default function RootLayout({
       <html lang="en">
         <body>
           <ReduxProvider store={store}>
-            <Nav/>
-            <section id='main_section'>
-              {children}
-                <aside>
-                  <Cart />
-                </aside>
-            </section>
+            <PersistGate loading={null} persistor={persistor}>
+              <Nav/>
+              <section id='main_section'>
+                {children}
+                  <aside>
+                    <Cart />
+                  </aside>
+              </section>
+            </PersistGate>
           </ReduxProvider>
         </body>
       </html>

@@ -8,10 +8,9 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import { AiOutlineUnorderedList } from "react-icons/ai";
 import { BsArrowCounterclockwise } from "react-icons/bs";
 import { BiBarChartSquare } from "react-icons/bi";
-
 import {NavItem} from "@/comp";
  export const Nav = () => {
-  const togglerState = useSelector((state: RootState) => state.reducer.toggler.value) 
+  const togglerState = useSelector((state: RootState) => state.toggler.value) 
   const dispatch = useDispatch()
   
   return (

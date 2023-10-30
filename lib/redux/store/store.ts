@@ -1,11 +1,23 @@
 import { configureStore, type ThunkAction, type Action } from '@reduxjs/toolkit'
-import { rootReducer } from './rootReducer'
+import {persistedReducer} from "./rootReducer"
+import { persistStore } from 'redux-persist'
+import thunk from 'redux-thunk'
+import {
+    FLUSH,
+    REHYDRATE,
+    PAUSE,
+    PERSIST,
+    PURGE,
+    REGISTER,
+  } from 'redux-persist'
+
+
 
 export const store = configureStore({
-    reducer: {
-        reducer: rootReducer
-    },
+    reducer: persistedReducer,
+    middleware: [thunk]
 })
+export const persistor = persistStore(store)
 
 // Types
 const ReduxTypes = {}

@@ -1,3 +1,4 @@
+'use client'
 import styles from './Cart.module.scss'
 import { useSelector } from 'react-redux'
 import type { RootState } from "@/lib/redux/store/store"
@@ -10,12 +11,12 @@ export interface ListItem {
 }
 
 export const Cart = () => {
-  const toggleState = useSelector((state: RootState) => state.reducer.toggler.value)
-  const activePage = useSelector((state: RootState) => state.reducer.activeSideBarPage.value)
+  const toggleState = useSelector((state: RootState) => state.toggler.value)
+  const activePage = useSelector((state: RootState) => state.activeSideBarPage.value)
   return toggleState ? (
     <>
-        {activePage === 'EditPage' && <ShoppingList/>}
         {activePage === 'CreateNewItemPage' && <CreateItem/>}
+        {activePage === 'EditPage' && <ShoppingList/>}
     </>
-  ) : null
+  ) : <div></div>
 }

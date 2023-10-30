@@ -1,7 +1,19 @@
+'use client'
+import { useSelector, useDispatch } from "react-redux";
+import type { RootState } from "@/lib/redux/store/store";
 import { AiOutlineSearch } from "react-icons/ai"
 import {ItemsCategory} from "@/comp"
 import styles from './Items.module.scss'
+
+
 export const Items = () => {
+  //connecting to redux store
+  const itemList = useSelector((state:RootState) => state.Items.value);
+  //extract unique categories using Set and map
+  const categorySet = new Set(itemList.map(item => item.category)) 
+  // convert the Set to an array
+  const categoryList = Array.from(categorySet)
+  
   return (
     <section className={styles.item_sec}>
         <div className={styles.item_top}>
@@ -14,10 +26,9 @@ export const Items = () => {
           </div>
         </div>
         <div className={styles.item_main}>
-          <ItemsCategory title="Fruit and vegetables"/>
-          <ItemsCategory title="Meat and Fish"/>
-          <ItemsCategory title="Beverages"/>
-          <ItemsCategory title="Pets"/>
+          {categoryList.map((category, index)=>(
+            <ItemsCategory key={index} title={category}/>
+          ))}
         </div>
     </section>
   )
