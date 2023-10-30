@@ -2,7 +2,6 @@ import { useSelector, useDispatch } from "react-redux";
 import type { RootState } from "@/lib/redux/store/store";
 import {ItemsCard} from "@/comp"
 import styles from './ItemsCategory.module.scss'
-import { Item } from "@/lib/redux/slice/addItem";
 export const ItemsCategory = ({title}: {title: string}) => {
 // capitalize any text
   const capitalizeText = (text: any) => {
