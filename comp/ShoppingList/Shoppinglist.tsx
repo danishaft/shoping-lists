@@ -11,9 +11,9 @@ export const ShoppingList = () => {
     <section className={styles.cart_sec}>
         <div className={styles.cont}>
           <Card/>
-          <ListName/>
+          {/* <ListName/>
           <ListCategory category={category[0]} data={state[0]}/>
-          <ListCategory category={category[1]}  data={state[1]}/> 
+          <ListCategory category={category[1]}  data={state[1]}/>  */}
         </div>
         <div className={styles.bottom}>
           <div className={styles.input_container}>

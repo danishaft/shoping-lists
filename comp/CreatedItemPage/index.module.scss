@@ -1,0 +1,32 @@
+@use '../../styles/responsive' as r;
+@use '../../styles/global' as g;
+
+.createdItem_section{
+    background: #fff;
+    @include g.flex-c;
+    justify-content: space-between;
+    width: 100%;
+    height: 100vh;
+    padding: 2em 0 0 0;
+}
+.cont{
+    width: 70%;
+    margin: 0 auto;
+}
+.cont .image>*{
+    border-radius: 10px;
+}
+
+.bottom{
+    background: #FFF;
+    width: 100%;
+    padding: 1.5em 0;
+    @include g.flex-r;
+    gap: 1em;
+}
+
+@include r.tablet{
+    .cont{
+        width: 80%;
+    }
+}

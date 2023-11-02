@@ -8,9 +8,10 @@
     width: 100%;
     height: 100vh;
     padding: 3em 0 0 0;
+    transition: max-width 0.3s ease-in-out;
 }
 .cont{
-    width: 80%;
+    width: 70%;
     margin: 0 auto;
 }
 .bottom{
@@ -19,7 +20,7 @@
     padding: 1.5em 0;
 }
 .bottom .input_container{
-    width: 80%;
+    width: 70%;
     margin: auto;
     border: 2px solid g.$primary-orange;
     border-radius: 12px;
@@ -46,7 +47,7 @@
 }
 //breakpoints
 @include r.tablet{
-    .cart_sec{
-        // padding: 2em;
+    .cont{
+        width: 80%;
     }
 }

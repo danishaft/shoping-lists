@@ -9,7 +9,7 @@ import SideBarReducer from "../slice/sidebarFlow";
 const rootPersistConfig = {
     key: 'root',
     storage, 
-    blacklist: ['toggler', 'activeSidebarPage']
+    whitelist: ['Items']
 }
 
 const rootReducer = combineReducers({

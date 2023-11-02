@@ -1,13 +1,12 @@
 'use client'
 import { useDispatch } from "react-redux";
-import {toggle} from '../../lib/redux/slice/toggler'
-import {createItem} from '../../lib/redux/slice/addItem'
+import {switchSideBarPage as switcher} from '../../lib/redux/slice/sidebarFlow'
+import { saveNewItem } from "@/lib/redux/slice/addItem";
 import { useState, ChangeEvent } from 'react'
 import { Button, Options } from '..'
 import styles from './CreateItem.module.scss'
 import { Item } from '@/utils/interfaces'
-import { v4 as uuidv4 } from 'uuid';
-import {useRouter} from "next/navigation"
+import { v4 as uuidv4 } from 'uuid';7
 
 
 const initialInput: Item = {
@@ -20,7 +19,6 @@ const initialInput: Item = {
 
 export const CreateItem = () => {
   const dispatch = useDispatch()
-  const router = useRouter();
   const [inputVal, setInputVal] = useState<Item>(initialInput)
   const [dropdown, setDropdown] = useState(false)
   const [active, setActive] = useState<string | null>(null)
@@ -48,10 +46,8 @@ export const CreateItem = () => {
   const handleSubmit = (e: any) => {
     e.preventDefault(); 
     setInputVal(initialInput)
-    dispatch(toggle(false))
-    dispatch(createItem(inputVal))
-    router.push('/')
-    console.log(inputVal)
+    dispatch(saveNewItem(inputVal))
+    dispatch(switcher('CreatedItemPage'))
   };
 
   return (
@@ -66,7 +62,7 @@ export const CreateItem = () => {
             <textarea value={inputVal?.note} onChange={handleChange} className={styles.input} name='note' placeholder='Enter a note' />
 
             <label htmlFor='image'>Image(optional)</label>
-            <input value={inputVal?.image} onChange={handleChange} className={styles.input} type='text' name='image' placeholder='Enter a url'/>
+            <input value={inputVal?.image} onChange={handleChange} className={styles.input} type='text' name='image' placeholder='Enter a url' disabled/>
 
             <label htmlFor='category'>Category</label>
             <input value={inputVal?.category} onChange={handleChange} onClick={()=>setDropdown(prev => !prev)} className={styles.input} type='text' name='category' placeholder='Enter a category' required/>
@@ -75,7 +71,7 @@ export const CreateItem = () => {
             }
         </div>
         <div className={styles.bottom}>
-          <Button text='cancel' bg='#fff' color='#000'/>
+          <Button onClick={()=> dispatch(switcher('EditPage'))} text='cancel' bg='#fff' color='#000'/>
           <Button type='submit' text='Save' bg='#F9A109' color='#fff'/>
         </div>
       </form>
