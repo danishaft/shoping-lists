@@ -3,16 +3,17 @@ import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
 import styles from './ListCard.module.scss'
 import { MdDeleteOutline } from "react-icons/md";
 import { useState } from 'react';
-export const ListCard = ({name, count}: {name: string, count: number}) => {
+import { Item } from '@/utils/interfaces';
+export const ListCard = ({item}: {item: Item}) => {
   const [status, setStatus] = useState(() => false)
   return (
     <div className={styles.list_card}>
-      <p>{name}</p>
+      <p>{item.name}</p>
 
       {
         !status &&
         <button onClick={() => {setStatus(prev => !prev)}} className={styles.count}>
-          {`${count} pcs`}
+          {`${item.quantity} pcs`}
         </button>
       }
 
@@ -25,7 +26,7 @@ export const ListCard = ({name, count}: {name: string, count: number}) => {
           <span className={styles.count_logic}>
             <AiOutlineMinus/>
             <button onClick={() => {setStatus(prev => !prev)}} className={styles.count}>
-              {`${count} pcs`}
+              {`${item.quantity} pcs`}
             </button>
             <AiOutlinePlus/>
           </span>

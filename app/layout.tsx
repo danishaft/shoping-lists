@@ -34,9 +34,7 @@ export default function RootLayout({
               <Nav/>
               <section id='main_section'>
                 {children}
-                  <aside>
-                    <Cart />
-                  </aside>
+                <Cart />
               </section>
             </PersistGate>
           </ReduxProvider>

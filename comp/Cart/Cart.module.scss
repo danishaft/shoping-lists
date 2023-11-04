@@ -1,0 +1,29 @@
+@use '../../styles/responsive' as r;
+@use '../../styles/global' as g;
+
+.aside {
+    width: 85%;
+    position: fixed;
+    transition: max-width 0.2s ease-in-out;
+    right: 0;
+    bottom: 0;
+    top: 0;
+}
+
+//responsiveness
+@include r.tablet{
+    .aside{
+        width: 43%;
+    }
+}
+
+@include r.small-desktop{
+    .aside {
+        width: 30%;
+    }
+}
+@include r.mid-desktop{
+    .aside {
+        width: 25%;
+    }
+}

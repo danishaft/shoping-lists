@@ -1,14 +1,22 @@
 import { AiOutlinePlus } from "react-icons/ai";
 import styles from './ItemsCard.module.scss'
-export const ItemsCard = ({text}: {text: string}) => {
-  function addItem (){
-    console.log('clicked')
-  }
+import { useDispatch } from "react-redux";
+import {toggle} from '../../lib/redux/slice/toggler'
+import {addToList} from '../../lib/redux/slice/shopingList'
+import { memo, useCallback } from "react";
+import { Item } from "@/utils/interfaces";
+import { capitalizeText } from "@/hooks/useCapitalize";
+export const ItemsCard = memo(function ItemsCard({item}: {item: Item}) {
+   const dispatch = useDispatch()
+   const addItem = useCallback(() => {
+    dispatch(toggle(true));
+    dispatch(addToList(item))
+  }, [dispatch, item]);
+
   return (
-    <span className={styles.item_card}>
-      <p>{text}</p>
-      {/* <button type="button" onClick={addItem}>n</button> */}
-      <AiOutlinePlus className={styles.icon}/>
+    <span role="article" className={styles.item_card}>
+      <p>{capitalizeText(item.name)}</p>
+      <button role="button" className={styles.btn} onClick={addItem}><AiOutlinePlus className={styles.icon}/></button>
     </span>
   )
-}
+});

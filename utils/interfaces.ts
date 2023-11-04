@@ -5,10 +5,7 @@ export interface Input {
     category: string;
   }
 
-  export interface Item {
+  export interface Item extends Input {
     id: string
-    name: string, 
-    image: string,
-    note: string,
-    category: string
+    quantity: number
 }

@@ -15,30 +15,17 @@ body #main_section {
     width: 85%;
     margin-left: auto;
 }
-body aside{
-    width: 85%;
-    position: fixed;
-    transition: max-width 0.2s ease-in-out;
-    right: 0;
-    bottom: 0;
-    top: 0;
-}
 
 @media (min-width: 48em){
-    body aside{
-        width: 43%;
-    }
     body #main_section {
         width: 89%;
     }
 }
+
 @media (min-width: 64em){
     body #main_section {
         width: 61%;
         margin-right: auto;
         margin-left: 8%;
-    }
-    body aside {
-        width: 30%;
     }
 }

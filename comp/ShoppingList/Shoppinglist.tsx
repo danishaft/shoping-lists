@@ -1,19 +1,22 @@
 'use client'
-import { useState } from "react"
+import { useDispatch, useSelector } from "react-redux"
 import {ListCategory, Card, ListName} from "@/comp"
 import styles from './ShoppingList.module.scss'
-import type { ListItem } from "../Cart/Cart"
+import { RootState } from "@/lib/redux/store/store"
 
 export const ShoppingList = () => {
-  const [state, setState] = useState<ListItem[]>([{name: 'Avocado', count: 1}, {name: 'Rice', count: 2}])
-  const [category, setCategory] = useState<string[]>(['Fruit and vegetables', 'Fruit'])
+  const list = useSelector((state: RootState) => state.shoppingList.list)
+  //extract unique categories using Set and map
+  const categorySet = new Set(list.map(item => item.category)) 
+  // convert the Set to an array
+  const categoryList = Array.from(categorySet)
+
   return (
     <section className={styles.cart_sec}>
         <div className={styles.cont}>
           <Card/>
-          {/* <ListName/>
-          <ListCategory category={category[0]} data={state[0]}/>
-          <ListCategory category={category[1]}  data={state[1]}/>  */}
+            <ListName/>
+            {categoryList.map((category, index) => <ListCategory key={index} category={category}/>)}
         </div>
         <div className={styles.bottom}>
           <div className={styles.input_container}>

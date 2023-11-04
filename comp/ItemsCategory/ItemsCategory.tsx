@@ -15,7 +15,7 @@ export const ItemsCategory = ({title}: {title: string}) => {
       <h2>{capitalizeText(title)}</h2>
         <div className={styles.list}>
           {filterItem.map((item, index) => (
-            <ItemsCard key={index} text={capitalizeText(item.name)}/>
+            <ItemsCard key={index} item={item}/>
           ))}
         </div>
     </div>
