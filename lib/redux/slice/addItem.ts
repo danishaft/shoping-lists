@@ -3,7 +3,7 @@ import type { PayloadAction } from '@reduxjs/toolkit'
 import { itemData } from '@/utils/data';
 import { Item } from '@/utils/interfaces';
 
-const initialState = {
+const initialState: {value: Item[], newItem: Item | {}} = {
     value: itemData,
     newItem: {}
 }
