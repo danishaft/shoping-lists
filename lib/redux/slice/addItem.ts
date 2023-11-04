@@ -1,11 +1,11 @@
 import {createSlice} from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
-import { itemData } from '@/utils/data';
+import { itemData, singleItem } from '@/utils/data';
 import { Item } from '@/utils/interfaces';
 
-const initialState: {value: Item[], newItem: Item | {}} = {
+const initialState = {
     value: itemData,
-    newItem: {}
+    newItem: singleItem
 }
 
 export const addItem = createSlice({

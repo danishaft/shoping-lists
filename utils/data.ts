@@ -10,4 +10,12 @@ export const itemData: Item[] =  [
         { id: uuidv4(), name: 'dog', image: '', note: '', category: "pet", quantity: 0}, 
         { id: uuidv4(), name: 'Chicken', image: 'j', note: '', category: 'meat and fish', quantity: 0}, 
     ]
-  
+
+export const singleItem: Item = {
+    id: uuidv4(),
+    name: 'Avocado', 
+    image: '', 
+    note: '', 
+    category: 'fruit and vegetables', 
+    quantity: 0
+} 
