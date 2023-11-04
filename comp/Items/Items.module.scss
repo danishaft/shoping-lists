@@ -2,14 +2,15 @@
 @use '../../styles/global' as g;
 
 .item_sec{
-    width: 100%;
-    padding: 0 2%;
+    width: 90%;
+    margin: 0 auto;
 }
 .item_top{
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
     margin: 1em 0 2.2em 0;
+    gap: .5em;
     flex-wrap: wrap;
 }
 .item_top h1{
@@ -28,7 +29,8 @@
     grid-column: 1/2;
 }
 .search .input{
-    padding: .6em 2.3em;
+    padding: .8em 0;
+    padding-left: 3em;
     border: none;
     border-radius: .8em;
     box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.04);

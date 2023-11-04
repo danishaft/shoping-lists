@@ -1,0 +1,10 @@
+@use '../../styles/global' as g;
+.back_btn{
+    border: none;
+    @include g.flex-r;
+    color: g.$primary-orange;
+    gap: .5em;
+    background: none;
+    margin-bottom: .5em;
+    font-weight: bold;
+}

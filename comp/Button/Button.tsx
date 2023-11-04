@@ -5,7 +5,6 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   text: string;
   bg: string;
   color: string;
-  clickAction?: () => void;
 }
 
 export const Button: React.FC<ButtonProps> = ({text, bg, color, onClick, ...props}) => {

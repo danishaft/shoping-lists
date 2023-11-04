@@ -7,6 +7,8 @@ import type { RootState } from '@/lib/redux/store/store'
 import { createItem } from '@/lib/redux/slice/addItem'
 import { toggle } from '@/lib/redux/slice/toggler'
 import { switchSideBarPage} from '@/lib/redux/slice/sidebarFlow'
+import { BackBtn } from '../BackBtn/BackBtn'
+import { BsArrowLeft} from 'react-icons/bs'
 
 export const CreatedItemPage = () => {
     const dispatch = useDispatch()
@@ -18,9 +20,15 @@ export const CreatedItemPage = () => {
         dispatch(switchSideBarPage('EditPage'))
         dispatch(toggle(false))
     }
+    function goBack(){
+        dispatch(switchSideBarPage('CreateNewItemPage'))
+    }
   return (
     <section className={styles.createdItem_section}>
         <div className={styles.cont}>
+            <BackBtn onClick={goBack} text='Back'>
+                <BsArrowLeft/>
+            </BackBtn>
             <div className={styles.image}>
                 <Image
                     src={defaultImage}
@@ -30,21 +38,23 @@ export const CreatedItemPage = () => {
                 />
             </div>
             <div className={styles.name}>
-                <h3>name</h3>
-                <p>{newItem.name}</p>
+                <h3 className={styles.title}>name</h3>
+                <p className={styles.text}>{newItem.name}</p>
             </div>
             <div className={styles.category}>
-                <h3>category</h3>
-                <p>{newItem.category}</p>
+                <h3 className={styles.title}>category</h3>
+                <p className={styles.small_text}>{newItem.category}</p>
             </div>
-            <article className={styles.note}>
-                {newItem.note || defaultNote }
-            </article>
+            <div className={styles.note}>
+                <h3 className={styles.title}>note</h3>
+                <article className={styles.small_text}>
+                    {newItem.note || defaultNote }
+                </article>
+            </div>
         </div>
         <div className={styles.bottom}>
-            <Button text='delete' type='button' bg='#fff' color='#000'/>
-            {/* <Button type='button' onClick={addToList} text='Add to list' bg='#F9A109' color='#fff' /> */}
-            <button onClick={addToList}>add to lister</button>
+            <Button type='button' onClick={goBack} text='delete' bg='#fff' color='#000'/>
+            <Button type='button' onClick={addToList} text='Add to list' bg='#F9A109' color='#fff'/>
         </div>
     </section>
   )

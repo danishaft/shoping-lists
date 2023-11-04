@@ -45,7 +45,6 @@ export const CreateItem = () => {
   // Handle form submission
   const handleSubmit = (e: any) => {
     e.preventDefault(); 
-    setInputVal(initialInput)
     dispatch(saveNewItem(inputVal))
     dispatch(switcher('CreatedItemPage'))
   };

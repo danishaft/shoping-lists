@@ -8,13 +8,37 @@
     width: 100%;
     height: 100vh;
     padding: 2em 0 0 0;
+    text-transform: capitalize;
 }
 .cont{
     width: 70%;
     margin: 0 auto;
 }
+.cont > * {
+    margin-bottom: 1.2em;
+}
+.cont .image {
+    margin-bottom: 2em;
+}
 .cont .image>*{
     border-radius: 10px;
+}
+.cont .title{
+    color: #C1C1C4;
+    @include g.text-sm;
+}
+.cont h3{
+    margin-bottom: .1em;
+}
+.cont .text {
+    color: #000;
+    @include g.text-bg0;
+    font-weight: bold;
+}
+.cont .small_text{
+    color: #000;
+    @include g.text-base;
+    font-weight: 600;
 }
 
 .bottom{

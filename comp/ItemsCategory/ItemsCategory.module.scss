@@ -3,11 +3,11 @@
 
 .category{
     width: 100%;
-    margin-bottom: 1em
+    margin-bottom: 1.3em;
 }
 .category h2{
     @include g.text-base;
-    margin-bottom: .5em;
+    margin-bottom: .6em;
 }
 .category .list{
     display: flex;
