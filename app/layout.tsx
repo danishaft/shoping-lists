@@ -1,3 +1,4 @@
+
 import {Quicksand} from 'next/font/google'
 import {Nav} from '@/comp'
 import '../styles/index.scss'
@@ -26,7 +27,7 @@ export default function RootLayout({
 }) {
   return (
       <html lang="en">
-        <body style={quickSand.style}>
+        <body className={quickSand.className}>
           <ReduxProvider store={store}>
             <PersistGate loading={null} persistor={persistor}>
               <Nav/>
