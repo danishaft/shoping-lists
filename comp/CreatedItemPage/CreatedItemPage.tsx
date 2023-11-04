@@ -16,7 +16,7 @@ export const CreatedItemPage = () => {
     const defaultNote = 'You just created an item for your shopping lists. Do well to add this item to the list for your convenience'
     
     function addToList(){
-        dispatch(createItem(newItem))
+        dispatch(createItem(newItem!))
         dispatch(switchSideBarPage('EditPage'))
         dispatch(toggle(false))
     }
