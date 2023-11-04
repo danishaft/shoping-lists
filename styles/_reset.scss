@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
 @forward "global";
 @forward "responsive";
 
@@ -43,7 +43,6 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
-  font-family: 'Quicksand', sans-serif;
 }
 
 /* A elements that don't have a class get default styles */
