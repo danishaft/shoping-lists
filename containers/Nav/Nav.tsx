@@ -10,6 +10,8 @@ import { AiOutlineUnorderedList } from "react-icons/ai";
 import { BsArrowCounterclockwise } from "react-icons/bs";
 import { BiBarChartSquare } from "react-icons/bi";
 import {NavItem} from "@/comp";
+
+
  export const Nav = () => {
   const togglerState = useSelector((state: RootState) => state.toggler.value) 
   const dispatch = useAction(toggle)
@@ -20,18 +22,24 @@ import {NavItem} from "@/comp";
         <Image
           src={logo}
           alt="logo"
+          width={50}
+          height={50}
+          aria-label="logo image"
+          crossOrigin="use-credentials"
         />
       </div>
       <nav className={styles.nav_list}>
-        <NavItem path="/">
-          <AiOutlineUnorderedList/>
-        </NavItem>
-        <NavItem path="/history">
-          <BsArrowCounterclockwise/>
-        </NavItem>
-        <NavItem path="/stats">
-          <BiBarChartSquare/>
-        </NavItem>
+        <ul>
+          <NavItem path="/">
+            <AiOutlineUnorderedList/>
+          </NavItem>
+          <NavItem path="/history">
+            <BsArrowCounterclockwise/>
+          </NavItem>
+          <NavItem path="/stats">
+            <BiBarChartSquare/>
+          </NavItem>
+        </ul>
       </nav>
       <div className={styles.cart_Icon} onClick={()=> dispatch(!togglerState)}>
         <AiOutlineShoppingCart/>

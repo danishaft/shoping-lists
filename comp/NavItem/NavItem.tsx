@@ -13,10 +13,18 @@ export const NavItem = ({children, path}: {children: ReactNode, path: string}) =
       setActive(false)
     }
   }, [pathname, path])
+
+  const activeClass = active ? styles.active_nav_item : ""
   return (
-    <Link href={path} className={styles.nav_item}>
-        {active && <div className={styles.nav_indicator}></div>}
+    // <Link href={path} className={styles.nav_item}>
+    //     {active && <div className={styles.nav_indicator}></div>}
+    //     {children}
+    // </Link>
+    
+    <li className={`${styles.nav_item} ${activeClass}`}>                            
+      <Link href={path} className={styles.nav_link}>
         {children}
-    </Link>
+      </Link>
+    </li>
   )
 }
