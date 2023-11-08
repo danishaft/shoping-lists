@@ -1,9 +1,16 @@
 'use client'
 import Link from "next/link"
 import styles from "./NavItem.module.scss"
-import { ReactNode, useEffect, useState } from "react"
+import React, { ReactNode, memo, useEffect, useState } from "react"
 import { usePathname } from "next/navigation"
-export const NavItem = ({children, path}: {children: ReactNode, path: string}) => {
+
+interface NavItemProps {
+  children: ReactNode,
+  path: string
+}
+
+
+const NavItem: React.FC<NavItemProps> = ({children, path}) => {
   const [active, setActive] = useState(false)
   const pathname = usePathname();
   useEffect(() => {
@@ -16,11 +23,6 @@ export const NavItem = ({children, path}: {children: ReactNode, path: string}) =
 
   const activeClass = active ? styles.active_nav_item : ""
   return (
-    // <Link href={path} className={styles.nav_item}>
-    //     {active && <div className={styles.nav_indicator}></div>}
-    //     {children}
-    // </Link>
-    
     <li className={`${styles.nav_item} ${activeClass}`}>                            
       <Link href={path} className={styles.nav_link}>
         {children}
@@ -28,3 +30,5 @@ export const NavItem = ({children, path}: {children: ReactNode, path: string}) =
     </li>
   )
 }
+
+export default memo(NavItem)

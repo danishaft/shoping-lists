@@ -52,20 +52,20 @@ export const CreateItem = () => {
 
   return (
     <section className={styles.createItem_sec}>
-      <form id={styles.formik} onSubmit={handleSubmit}> 
+      <form id={styles.formik}  name="myForm" onSubmit={handleSubmit}> 
         <div className={styles.cont}>
           <h2>Add a new item</h2>
             <label htmlFor="name">Name</label>
-            <input value={inputVal?.name} onChange={handleChange} className={styles.input} type="text" name='name' placeholder='Enter a name' required/>
+            <input value={inputVal?.name} onChange={handleChange} className={styles.input} type="text" name='name' placeholder='Enter a name' required autoComplete="on"/>
 
             <label htmlFor="note">Note(optional)</label>
-            <textarea value={inputVal?.note} onChange={handleChange} className={styles.input} name='note' placeholder='Enter a note' />
+            <textarea value={inputVal?.note} onChange={handleChange} className={styles.input} name='note' placeholder='Enter a note' autoComplete="on"/>
 
             <label htmlFor='image'>Image(optional)</label>
             <input value={inputVal?.image} onChange={handleChange} className={styles.input} type='text' name='image' placeholder='Enter a url' disabled/>
 
             <label htmlFor='category'>Category</label>
-            <input value={inputVal?.category} onChange={handleChange} onClick={()=>setDropdown(prev => !prev)} className={styles.input} type='text' name='category' placeholder='Enter a category' required/>
+            <input value={inputVal?.category} onChange={handleChange} onClick={()=>setDropdown(prev => !prev)} className={styles.input} type='text' name='category' placeholder='Enter a category' required autoComplete="on"/>
             {dropdown &&
                 <Options handleDropdown={handleDropdown} active={active}/>
             }

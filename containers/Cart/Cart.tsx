@@ -1,7 +1,7 @@
 'use client'
 import { useSelector } from 'react-redux'
 import type { RootState } from "@/lib/redux/store/store"
-import {CreatedItemPage, ShoppingList, CreateItem} from "@/comp"
+import {CreatedItemPage, ShoppingList, CreateItem} from "@/containers"
 import styles from './Cart.module.scss'
 
 export interface ListItem {

@@ -18,14 +18,22 @@ body #main_section {
 
 @media (min-width: 48em){
     body #main_section {
-        width: 89%;
+        width: 90%;
     }
 }
 
 @media (min-width: 64em){
     body #main_section {
-        width: 61%;
+        width: 60%;
         margin-right: auto;
         margin-left: 8%;
+    }
+}
+
+@media (min-width: 87.5em){
+    body #main_section {
+        width: 70%;
+        margin-right: auto;
+        margin-left: 6%;
     }
 }

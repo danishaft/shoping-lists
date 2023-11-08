@@ -29,20 +29,7 @@
         padding: 0;
         margin: 0;
     }
-    .cart_Icon {
-        background: g.$primary-orange;
-        border-radius: 50%;
-        width: 2em;
-        height: 2em;
-        @include g.flex-c;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-    }
-    .cart_Icon > * {
-        color: #ffff;
-    }
-
+    
     //responsiveness
     @include r.tablet{
         .header{
@@ -51,6 +38,11 @@
     }
     @include r.small-desktop{
         .header{
-            width: 7%;
+            width: 8%;
+        }
+    }
+    @include r.mid-desktop{
+        .header{
+            width: 6%;
         }
     }

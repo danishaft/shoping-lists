@@ -13,17 +13,17 @@
 //responsiveness
 @include r.tablet{
     .aside{
-        width: 43%;
+        width: 40%;
     }
 }
 
 @include r.small-desktop{
     .aside {
-        width: 30%;
+        width: 32%;
     }
 }
 @include r.mid-desktop{
     .aside {
-        width: 25%;
+        width: 24%;
     }
 }

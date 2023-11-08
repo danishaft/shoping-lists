@@ -6,7 +6,7 @@ import { store, persistor } from '@/lib/redux/store/store'
 import { PersistGate } from 'redux-persist/integration/react'
 import type { Metadata } from 'next'
 import {Provider as ReduxProvider} from "react-redux"
-import {Cart} from '@/comp'
+import {Cart} from '@/containers'
 
 
  const metadata: Metadata = {

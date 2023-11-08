@@ -1,0 +1,16 @@
+@use '../../styles/global' as g;
+@use '../../styles/responsive' as r;
+
+.cart_Icon {
+        background: g.$primary-orange;
+        border-radius: 50%;
+        width: 2em;
+        height: 2em;
+        @include g.flex-c;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+    .cart_Icon > * {
+        color: #ffff;
+    }
