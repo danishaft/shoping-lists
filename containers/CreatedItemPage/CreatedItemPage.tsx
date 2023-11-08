@@ -1,13 +1,13 @@
 import Image from 'next/image'
 import styles from './index.module.scss'
 import defaultImage from '../../public/assests/Photo.jpg'
-import { Button } from '..'
+import { Button } from '../../comp'
 import { useDispatch, useSelector } from 'react-redux'
 import type { RootState } from '@/lib/redux/store/store'
 import { createItem } from '@/lib/redux/slice/addItem'
 import { toggle } from '@/lib/redux/slice/toggler'
 import { switchSideBarPage} from '@/lib/redux/slice/sidebarFlow'
-import { BackBtn } from '../BackBtn/BackBtn'
+import { BackBtn } from '../../comp/BackBtn/BackBtn'
 import { BsArrowLeft} from 'react-icons/bs'
 
 export const CreatedItemPage = () => {

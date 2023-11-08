@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import {switchSideBarPage as switcher} from '../../lib/redux/slice/sidebarFlow'
 import { saveNewItem } from "@/lib/redux/slice/addItem";
 import { useState, ChangeEvent } from 'react'
-import { Button, Options } from '..'
+import { Button, Options } from '../../comp'
 import styles from './CreateItem.module.scss'
 import { Item } from '@/utils/interfaces'
 import { v4 as uuidv4 } from 'uuid';7

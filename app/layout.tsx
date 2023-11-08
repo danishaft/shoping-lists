@@ -1,6 +1,6 @@
 'use client'
 import {Quicksand} from 'next/font/google'
-import {Nav} from '@/comp'
+import {Nav} from '@/containers'
 import '../styles/index.scss'
 import { store, persistor } from '@/lib/redux/store/store'
 import { PersistGate } from 'redux-persist/integration/react'

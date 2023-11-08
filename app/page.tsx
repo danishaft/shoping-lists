@@ -1,4 +1,4 @@
-import {Items} from "@/comp";
+import {Items} from "@/containers";
 
 export default function Home() {
   return (

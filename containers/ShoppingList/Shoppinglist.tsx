@@ -14,7 +14,7 @@ export const ShoppingList = () => {
   return (
     <section className={styles.cart_sec}>
         <div className={styles.cont}>
-          <Card/>
+            <Card/>
             <ListName/>
             {categoryList.map((category, index) => <ListCategory key={index} category={category}/>)}
         </div>
