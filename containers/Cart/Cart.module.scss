@@ -4,10 +4,19 @@
 .aside {
     width: 85%;
     position: fixed;
-    transition: max-width 0.2s ease-in-out;
+    transition: transform 0.3s ease-in-out;
     right: 0;
-    bottom: 0;
     top: 0;
+}
+.aside[data-visible="false"] {
+    transform: translateX(100%);
+}
+.aside[data-visible="true"] {
+    transform: translateX(0%);
+}
+
+.aside__header {
+    display: flex;
 }
 
 //responsiveness

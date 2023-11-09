@@ -8,7 +8,7 @@ export const CartIcon = () => {
     const togglerState = useSelector((state: RootState) => state.toggler.value) 
     const dispatch = useAction(toggle)
   return (
-    <div className={styles.cart_Icon} onClick={()=> dispatch(!togglerState)}>
+    <div aria-controls="cart" aria-expanded="false" aria-roledescription="cart btn" className={styles.cart_Icon} onClick={()=> dispatch(!togglerState)}>
         <AiOutlineShoppingCart/>
     </div>
   )

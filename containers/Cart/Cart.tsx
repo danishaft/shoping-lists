@@ -12,11 +12,11 @@ export interface ListItem {
 export const Cart = () => {
   const toggleState = useSelector((state: RootState) => state.toggler.value)
   const activePage = useSelector((state: RootState) => state.activeSideBarPage.value)
-  return toggleState ? (
-    <aside className={styles.aside}>
+  return (
+    <aside id='cart' className={styles.aside} data-visible={`${toggleState}`}>
         {activePage === 'EditPage' && <ShoppingList/>}
         {activePage === 'CreateNewItemPage' && <CreateItem/>}
         {activePage === 'CreatedItemPage' && <CreatedItemPage/>}
     </aside>
-  ) : <></>
+  ) 
 }
