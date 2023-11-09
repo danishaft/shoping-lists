@@ -10,8 +10,7 @@
     left: 15%;
     top: 0;
     max-height: 100vh;
-    border: 1px solid red;
-    // overflow: hidden;
+    overflow: hidden;
 }
 .aside[data-visible="false"] {
     transform: translateX(100%);
