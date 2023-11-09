@@ -2,11 +2,16 @@
 @use '../../styles/global' as g;
 
 .aside {
-    width: 85%;
     position: fixed;
+    // width: 85%;
     transition: transform 0.3s ease-in-out;
     right: 0;
+    bottom: 0;
+    left: 15%;
     top: 0;
+    max-height: 100vh;
+    border: 1px solid red;
+    // overflow: hidden;
 }
 .aside[data-visible="false"] {
     transform: translateX(100%);
@@ -22,17 +27,20 @@
 //responsiveness
 @include r.tablet{
     .aside{
-        width: 40%;
+        // left: 40%;
+        left: 60%;
     }
 }
 
 @include r.small-desktop{
     .aside {
-        width: 32%;
+        // left: 32%;
+        left: 68%;
     }
 }
 @include r.mid-desktop{
     .aside {
-        width: 24%;
+        // left: 24%;
+        left: 76%;
     }
 }
