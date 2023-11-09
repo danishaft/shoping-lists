@@ -3,10 +3,9 @@
 
     .header{
         position: fixed;
+        inset: 0;
         box-shadow: 0px 7px 3px 1px rgba(0,0,0,0.1);
         background: g.$primary-white;
-        height: 100%;
-        min-height: 100vh;
         width: 15%;
         padding: 2em 0em;
         @include g.flex-c;
