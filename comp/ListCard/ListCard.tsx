@@ -45,7 +45,7 @@ const ListCard = ({item}: {item: Item}) => {
             <button aria-controls='item-actions' onClick={() => {setStatus(prev => !prev)}} className={styles.count}>
               {`${item.quantity} pcs`}
             </button>
-            <AiOutlinePlus style={{marginRight: '.2em'}} aria-roledescription='add item button' onClick={increaseItem}/>
+            <AiOutlinePlus style={{marginRight: '.2em'}} onClick={increaseItem}/>
           </span>
         </div>
       }
