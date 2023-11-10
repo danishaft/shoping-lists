@@ -41,11 +41,11 @@ const ListCard = ({item}: {item: Item}) => {
             <MdDeleteOutline/>
           </span>
           <span className={styles.count_logic}>
-            <AiOutlineMinus aria-roledescription='minus item button' onClick={decreaseItem}/>
+            <AiOutlineMinus className={styles.action_btn} aria-roledescription='minus item button' onClick={decreaseItem}/>
             <button aria-controls='item-actions' onClick={() => {setStatus(prev => !prev)}} className={styles.count}>
               {`${item.quantity} pcs`}
             </button>
-            <AiOutlinePlus style={{marginRight: '.2em'}} onClick={increaseItem}/>
+            <AiOutlinePlus className={styles.action_btn} style={{marginRight: '.2em'}} onClick={increaseItem}/>
           </span>
         </div>
       }
