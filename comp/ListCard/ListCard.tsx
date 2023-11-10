@@ -5,19 +5,21 @@ import { MdDeleteOutline } from "react-icons/md";
 import { memo, useState } from 'react';
 import { Item } from '@/utils/interfaces';
 import { useAction } from '@/lib/redux/hooks';
-import { deleteFromList } from '@/lib/redux/slice/shopingList';
+import { deleteFromList, editListItem } from '@/lib/redux/slice/shopingList';
 const ListCard = ({item}: {item: Item}) => {
   const [status, setStatus] = useState(() => false)
-  const dispatch = useAction(deleteFromList)
+  const dispatchDelete = useAction(deleteFromList)
+  const dispatchEdit = useAction(editListItem)
+
   const increaseItem = () => {
-    item.quantity++
+    dispatchEdit({ ...item, quantity: item.quantity + 1 });
     setStatus(!status)
   }
   const decreaseItem = () => {
     if (item.quantity > 0){
-      item.quantity--;
+      dispatchEdit({ ...item, quantity: item.quantity - 1 })
       setStatus(!status)
-    } else{}
+    } 
   }
   return (
     <div className={styles.list_card}>
@@ -37,7 +39,7 @@ const ListCard = ({item}: {item: Item}) => {
       {
         status &&
         <div id='item-actions' className={styles.countSec_open}>
-          <span className={styles.delete} aria-roledescription='delete item button' onClick={() => dispatch(item)}>
+          <span className={styles.delete} aria-roledescription='delete item button' onClick={() => dispatchDelete(item)}>
             <MdDeleteOutline/>
           </span>
           <span className={styles.count_logic}>

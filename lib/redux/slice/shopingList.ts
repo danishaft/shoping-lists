@@ -18,9 +18,13 @@ export const shoppingList = createSlice({
         deleteFromList: (state, action: PayloadAction<Item>) => {
             const value = state.list
             state.list = value.filter(item => item.id !== action.payload.id)
+        },
+        editListItem: (state, action: PayloadAction<Item>) => {
+            const value = state.list
+            state.list = [...value, action.payload]
         }
     }
 })
 
-export const {addToList, deleteFromList} = shoppingList.actions
+export const {addToList, deleteFromList, editListItem} = shoppingList.actions
 export default shoppingList.reducer
