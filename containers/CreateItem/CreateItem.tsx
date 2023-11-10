@@ -1,7 +1,7 @@
 'use client'
 import { useDispatch } from "react-redux";
 import {switchSideBarPage as switcher} from '../../lib/redux/slice/sidebarFlow'
-import { saveNewItem } from "@/lib/redux/slice/addItem";
+import { saveNewItem } from "@/lib/redux/slice/Item";
 import { useState, ChangeEvent } from 'react'
 import { Button, Options } from '../../comp'
 import styles from './CreateItem.module.scss'

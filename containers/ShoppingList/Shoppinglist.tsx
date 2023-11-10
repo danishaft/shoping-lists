@@ -1,8 +1,10 @@
 'use client'
-import { useDispatch, useSelector } from "react-redux"
-import {ListCategory, Card, ListName} from "@/comp"
+import { useSelector } from "react-redux"
+import ListCategory from "@/comp/ListCategory/ListCategory"
+import Card from "@/comp/Card/Card"
 import styles from './ShoppingList.module.scss'
 import { RootState } from "@/lib/redux/store/store"
+import ListName from "@/comp/ListName/ListName"
 
 export const ShoppingList = () => {
   const list = useSelector((state: RootState) => state.shoppingList.list)

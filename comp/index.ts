@@ -1,10 +1,5 @@
 
 export * from './ItemsCard'
-export * from './ItemsCategory'
-export * from './Card'
-export * from './ListCard'
-export * from './ListCategory'
-export * from './ListName'
 export * from './Button'
 export * from './Options'
 export * from './BackBtn'

@@ -10,6 +10,9 @@
     @include g.text-base;
     font-weight: 600;
 }
+.list_card p::first-letter{
+    text-transform: capitalize;
+}
 .count{
     border: 2px solid g.$primary-orange;
     background: none;
@@ -26,8 +29,9 @@
     @include g.flex-r;
     justify-content: space-between;
     align-items: center;
-    padding-right: .2em;
+    height: 1.8rem;
     gap: .2em;
+    transition: all 0.3s ease-in-out;
 }
 .countSec_open .delete{
     @include g.flex-r;
@@ -44,4 +48,7 @@
     align-items: center;
     color: g.$primary-orange;
     gap: .5em;
+}
+.brown{
+    background: #FFF0DE !important;
 }

@@ -1,10 +1,13 @@
 'use client'
 import { BiSolidPencil } from 'react-icons/bi'
 import styles from './ListName.module.scss'
-import { useState } from 'react'
-export const ListName = () => {
+import { memo, useState, ChangeEvent } from 'react'
+
+
+
+const ListName: React.FC = () => {
   const [input, setInput] = useState('Shopping list')
-  const handleChange = (e: any) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setInput(e.target.value)
   }
   return (
@@ -14,3 +17,5 @@ export const ListName = () => {
     </div>
   )
 }
+
+export default memo(ListName)

@@ -1,8 +1,8 @@
 'use client'
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import type { RootState } from "@/lib/redux/store/store";
 import { AiOutlineSearch } from "react-icons/ai"
-import {ItemsCategory} from "@/comp"
+import ItemsCategory from "@/comp/ItemsCategory/ItemsCategory";
 import styles from './Items.module.scss'
 
 

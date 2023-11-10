@@ -2,7 +2,7 @@ import { combineReducers } from "@reduxjs/toolkit";
 import storage from 'redux-persist/lib/storage'
 import { persistReducer} from 'redux-persist'
 import ToggleReducer from '../slice/toggler'
-import AddItemReducer from '../slice/addItem'
+import AddItemReducer from '../slice/Item'
 import SideBarReducer from "../slice/sidebarFlow";
 import shopingListReducer from "../slice/shopingList";
 
