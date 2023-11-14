@@ -1,0 +1,38 @@
+@use '../../styles/responsive' as r;
+@use '../../styles/global' as g;
+
+.checkboxContainer {
+    @include g.flex-r;
+    gap: .8em;
+    cursor: pointer;
+  
+    input[type="checkbox"] {
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border: 2px solid g.$primary-orange;
+      border-radius: 4px; 
+      outline: none;
+  
+      &:checked {
+        background-color: #FFF0DE; // Customize the background color for the checked state
+      }
+  
+      &:checked::before {
+        content: '\2713'; // Unicode checkmark character
+        display: block;
+        color: g.$primary-orange; // Customize the color for the checkmark
+        text-align: center;
+        line-height: 20px; // Adjust to center the checkmark
+      }
+    }
+  
+    p {
+      margin: 0;
+      @include g.text-base;
+      font-weight: 600;
+    }
+    p::first-letter{
+        text-transform: capitalize;
+    }
+  }

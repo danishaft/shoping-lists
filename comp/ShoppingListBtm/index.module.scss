@@ -1,19 +1,6 @@
-@use '../../styles/responsive' as r;
 @use '../../styles/global' as g;
+@use '../../styles/responsive' as r;
 
-.cart_sec {
-    @include g.flex-c;
-    justify-content: space-between;
-    background: g.$secondary-brown;
-    width: 100%;
-    height: 100%;
-    padding: 3em 0 0 0;
-    overflow-y: scroll;
-}
-.cont{
-    width: 70%;
-    margin: 0 auto;
-}
 .bottom{
     background: #FFF;
     width: 100%;
@@ -42,9 +29,7 @@
 .bottom .input_container.name_field_active{
     border: 2px solid g.$primary-orange;
 }
-//breakpoints
-@include r.tablet{
-    .cont{
-        width: 80%;
-    }
+.complete_btn{
+    @include g.flex-r;
+    gap: 1.8em;
 }

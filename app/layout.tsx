@@ -1,4 +1,6 @@
 'use client'
+import { ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import {Quicksand} from 'next/font/google'
 import {Nav} from '@/containers'
 import '../styles/index.scss'
@@ -33,6 +35,7 @@ export default function RootLayout({
             <PersistGate loading={null} persistor={persistor}>
               <Nav/>
               <section id='main_section'>
+                <ToastContainer/>
                 {children}
                 <Cart />
               </section>
