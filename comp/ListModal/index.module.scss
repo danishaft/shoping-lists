@@ -1,0 +1,39 @@
+@use '../../styles/global' as g;
+@use '../../styles/responsive' as r;
+
+.list_modal{
+    background: #fff;
+    width: 50%;
+    max-width: 25rem;
+    margin: auto;
+    padding: 1.5em;
+    border-radius: 15px;
+}
+.list_modal .top{
+    @include g.flex-r;
+    justify-content: space-between;
+    gap: 2.5em;
+    margin-bottom: 1.2em;
+}
+.list_modal .top p{
+    color: g.$primary-black;
+    @include g.text-bg;
+    text-wrap: wrap;
+    text-align: left;
+    line-height: 1.5rem;
+}
+.list_modal .top button {
+    width: fit-content;
+    padding: 0;
+    width: fit-content;
+    height: 20px;
+    background: none;
+    border: none;
+    align-self: flex-start;
+    color: #828282;
+}
+.list_modal .bottom{
+    @include g.flex-r;
+    justify-content: flex-end;
+    gap: 1em;
+}

@@ -21,6 +21,7 @@ const ListCard = ({item}: {item: Item}) => {
 
   const handleOnChange = () => {
     setChecked(!isChecked)
+    dispatchEdit({...item, completed: !isChecked})
   }
 
   const onDecrease = () => {

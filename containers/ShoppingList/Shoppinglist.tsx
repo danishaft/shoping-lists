@@ -8,16 +8,20 @@ import ListName from "@/comp/ListName/ListName"
 import { ChangeEvent, FormEvent, memo, useState } from "react"
 import { Button, ShoppingListBtm } from "@/comp"
 import { useAction } from "@/lib/redux/hooks"
-import { saveList } from "@/lib/redux/slice/shopingList"
+import { cancelList, clearList, saveList } from "@/lib/redux/slice/shopingList"
 import { saveToHistoryList } from "@/lib/redux/slice/history"
+import { ListModal } from "@/comp/ListModal/ListModal"
 
 
 const ShoppingList: React.FC = () => {
   const [inputVal, setInputVal] = useState<string>('')
   const list = useSelector((state: RootState) => state.shoppingList.list)
+  const isModalOpen = useSelector((state: RootState) => state.shoppingList.cancelList)
   const saveListStatus = useSelector((state: RootState) => state.shoppingList.saveList)
   const dispatchSaveStatus = useAction(saveList)
   const dispatchSaveToHistory = useAction(saveToHistoryList)
+  const dispatchClearList = useAction(clearList)
+  const dispatchOpenModal = useAction(cancelList)
   const categorySet = new Set(list.map(item => item.category)) 
   const categoryList = Array.from(categorySet)
 
@@ -29,11 +33,20 @@ const ShoppingList: React.FC = () => {
   const handleSave = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     dispatchSaveStatus();
-    setInputVal('')
   };
   const handleComplete = () => {
-    dispatchSaveStatus()
-    dispatchSaveToHistory(list)
+    dispatchClearList()
+    dispatchSaveToHistory({name: inputVal, shoppingList: list})
+    setInputVal('')
+  }
+  //
+  const toggleModal = () => {
+    dispatchOpenModal()
+  }
+  const clearShoppingList = () => {
+    dispatchClearList()
+    dispatchOpenModal()
+    setInputVal('')
   }
 
   return (
@@ -43,12 +56,18 @@ const ShoppingList: React.FC = () => {
             <ListName/>
             {categoryList.map((category, index) => <ListCategory key={index} category={category} data={list}/>)}
         </div>
+        <ListModal
+          isModalOpen={isModalOpen}
+          cancelList={clearShoppingList}
+          closeModal={toggleModal}
+        />
         <ShoppingListBtm
           handleChange={handleChange}
           handleSave={handleSave}
           handleComplete={handleComplete}
           inputVal={inputVal}
           saveList={saveListStatus}
+          openModal={() => dispatchOpenModal()}
         />
       </section>
   )

@@ -1,8 +1,8 @@
 import {createSlice} from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
-import { Item } from '@/utils/interfaces';
+import { History} from '@/utils/interfaces';
 
-const initialState: {historyList: Item[]} = {
+const initialState: {historyList: History[]} = {
     historyList: []
 }
 
@@ -10,10 +10,9 @@ export const historyList = createSlice({
     name: 'historyList',
     initialState,
     reducers: {
-        saveToHistoryList: (state, action: PayloadAction<Item[]>) => {
+        saveToHistoryList: (state, action: PayloadAction<History>) => {
             const value = state.historyList
-            state.historyList = action.payload
-            console.log(state.historyList)
+            state.historyList = [...value, action.payload]
         }
     }
 })

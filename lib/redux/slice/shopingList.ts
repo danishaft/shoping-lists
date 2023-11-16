@@ -3,9 +3,10 @@ import {createSlice} from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 import { Item } from '@/utils/interfaces';
 
-const initialState: {list: Item[], saveList: boolean} = {
+const initialState: {list: Item[], saveList: boolean, cancelList: boolean} = {
     list: [],
     saveList: false,
+    cancelList: false,
 }
 
 export const shoppingList = createSlice({
@@ -24,13 +25,17 @@ export const shoppingList = createSlice({
             const value = state.list
             state.list = value.map((item) => item.id === action.payload.id ? action.payload : item)
         },
+        clearList: () => ({ ...initialState }),
         saveList: (state) => {
             const value = state.saveList
             state.saveList = !value
-            console.log(state.saveList)
+        },
+        cancelList: (state) => {
+            const value = state.cancelList
+            state.cancelList = !value
         }
     }
 })
 
-export const {addToList, deleteFromList, editListItem, saveList} = shoppingList.actions
+export const {addToList, deleteFromList, editListItem, saveList, clearList, cancelList} = shoppingList.actions
 export default shoppingList.reducer

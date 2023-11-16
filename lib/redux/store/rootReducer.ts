@@ -5,21 +5,21 @@ import { persistReducer} from 'redux-persist'
 import ToggleReducer from '../slice/toggler'
 import AddItemReducer from '../slice/Item'
 import SideBarReducer from "../slice/sidebarFlow";
-import shopingListReducer from "../slice/shopingList";
+import shoppingListReducer from "../slice/shopingList";
 import historyListReducer from '../slice/history'
 
 
 const rootPersistConfig = {
     key: 'root',
     storage, 
-    whitelist: ['Items', 'shoppingList']
+    whitelist: ['Items', 'shoppingList', 'historyList']
 }
 
 const rootReducer = combineReducers({
     toggler: ToggleReducer,
     Items : AddItemReducer,
     activeSideBarPage: SideBarReducer,
-    shoppingList: shopingListReducer,
+    shoppingList: shoppingListReducer,
     historyList: historyListReducer
 })
 
