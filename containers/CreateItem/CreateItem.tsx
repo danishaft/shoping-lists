@@ -15,7 +15,8 @@ const initialInput: Item = {
   note: '',
   image: '',
   category: '',
-  quantity: 0
+  quantity: 0,
+  completed: false,
 };
 
 export const CreateItem = () => {
