@@ -1,7 +1,7 @@
-
+import { HistoryPage } from "@/containers"
 const History = () => {
   return (
-    <div>ll</div>
+    <HistoryPage/>
   )
 }
 
