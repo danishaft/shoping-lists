@@ -15,4 +15,11 @@ export interface Input {
 export interface History {
   name: string
   shoppingList: Item[]
+  date: string
+  status: string
+}
+
+export interface MonthSectionProps {
+  monthName: string,
+  history: History[],
 }
