@@ -11,6 +11,7 @@ import { useAction } from "@/lib/redux/hooks"
 import { cancelList, clearList, saveList } from "@/lib/redux/slice/shopingList"
 import { saveToHistoryList } from "@/lib/redux/slice/history"
 import { ListModal } from "@/comp/ListModal/ListModal"
+import { formatDate } from "@/utils/formatDate"
 
 
 const ShoppingList: React.FC = () => {
@@ -24,6 +25,7 @@ const ShoppingList: React.FC = () => {
   const dispatchOpenModal = useAction(cancelList)
   const categorySet = new Set(list.map(item => item.category)) 
   const categoryList = Array.from(categorySet)
+  const formattedDate: string = formatDate(new Date());
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const {value} = e.target
@@ -36,7 +38,7 @@ const ShoppingList: React.FC = () => {
   };
   const handleComplete = () => {
     dispatchClearList()
-    dispatchSaveToHistory({name: inputVal, shoppingList: list})
+    dispatchSaveToHistory({name: inputVal, shoppingList: list, date: formattedDate, status: "completed"})
     setInputVal('')
   }
   //
@@ -54,7 +56,9 @@ const ShoppingList: React.FC = () => {
         <div className={styles.cont}>
             <Card/>
             <ListName/>
-            {categoryList.map((category, index) => <ListCategory key={index} category={category} data={list}/>)}
+            <div className={styles.list_container}>
+              {categoryList.map((category, index) => <ListCategory key={index} category={category} data={list}/>)}
+            </div>
         </div>
         <ListModal
           isModalOpen={isModalOpen}

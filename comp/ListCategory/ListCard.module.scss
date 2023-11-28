@@ -1,7 +1,9 @@
 @use '../../styles/global' as g;
 @use '../../styles/responsive' as r;
 
-
+.list_category{
+    margin-right: 20px;
+}
 .list_category h2{
     color:#828282;
     @include g.text-sm;
