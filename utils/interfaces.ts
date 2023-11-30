@@ -13,6 +13,7 @@ export interface Input {
 }
 
 export interface History {
+  id: string
   name: string
   shoppingList: Item[]
   date: string

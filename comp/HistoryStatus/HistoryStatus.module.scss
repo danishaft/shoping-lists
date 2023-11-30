@@ -1,0 +1,17 @@
+@use '../../styles/responsive' as r;
+@use '../../styles/global' as g;
+
+.status{
+    border-radius: 8px;
+    padding: .2em .5em;
+    font-size: 0.75em;
+    font-weight: 550;
+}
+.completed{
+    color: #56CCF2;
+    border: 1.4px solid #56CCF2;
+}
+.cancelled{
+    color: #EB5757;
+    border: 1.4px solid #EB5757;
+}

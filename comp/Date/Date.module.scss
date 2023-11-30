@@ -1,0 +1,16 @@
+@use '../../styles/responsive' as r;
+@use '../../styles/global' as g;
+
+.history_date{
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        gap: 0 .5em;
+        color: g.$primary-ash;
+}
+.history_date .icon {
+    font-size: 20px;
+}
+.history_date p{
+    @include g.text-sm;
+}

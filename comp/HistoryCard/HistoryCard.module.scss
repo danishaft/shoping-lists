@@ -13,7 +13,6 @@
 }
 .history_card:hover{
     box-shadow: 0px 3px 11px 0px rgba(0, 0, 0, 0.09);
-    cursor: pointer;
     transform: scale(1.02);
     transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
@@ -22,27 +21,7 @@
     font-weight: bold;
     
 }
-.history_date{
-        margin-left: auto;
-        display: flex;
-        align-items: center;
-        gap: 0 .5em;
-        color: g.$primary-ash;
-}
-.history_card .icon {
-    font-size: 20px;
-}
-.history_date p{
-    @include g.text-sm;
-}
-.status{
-    border: 1.4px solid #56CCF2;
-    border-radius: 8px;
-    padding: .2em .5em;
-    font-size: 0.75em;
-    color: #56CCF2;
-    font-weight: 550;
-}
 .chevron{
     color: g.$primary-orange;
+    cursor: pointer;
 }

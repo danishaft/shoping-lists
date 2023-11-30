@@ -5,7 +5,7 @@ text: string;
 }
 export const BackBtn: React.FC<ButtonProps> = ({text, onClick, children, ...props}) => {
   return (
-    <button onClick={onClick} className={styles.back_btn}>
+    <button onClick={onClick} className={styles.back_btn} >
         {children}
         {text}
     </button>

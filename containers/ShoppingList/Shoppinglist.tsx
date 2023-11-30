@@ -12,6 +12,7 @@ import { cancelList, clearList, saveList } from "@/lib/redux/slice/shopingList"
 import { saveToHistoryList } from "@/lib/redux/slice/history"
 import { ListModal } from "@/comp/ListModal/ListModal"
 import { formatDate } from "@/utils/formatDate"
+import { v4 as uuidv4 } from 'uuid';
 
 
 const ShoppingList: React.FC = () => {
@@ -38,7 +39,7 @@ const ShoppingList: React.FC = () => {
   };
   const handleComplete = () => {
     dispatchClearList()
-    dispatchSaveToHistory({name: inputVal, shoppingList: list, date: formattedDate, status: "completed"})
+    dispatchSaveToHistory({id: uuidv4(), name: inputVal, shoppingList: list, date: formattedDate, status: "completed"})
     setInputVal('')
   }
   //
