@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@ramonak/react-progress-bar": "^5.1.1",
     "@reduxjs/toolkit": "^1.9.7",
     "date-fns": "^2.30.0",
     "mongodb": "^6.1.0",

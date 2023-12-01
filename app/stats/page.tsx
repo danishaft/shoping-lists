@@ -1,7 +1,8 @@
+import { StatsPage } from "@/containers"
 
 const Stats = () => {
   return (
-    <div>Stats</div>
+    <StatsPage/>
   )
 }
 
