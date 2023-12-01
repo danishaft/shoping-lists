@@ -8,7 +8,7 @@ import { createItem } from '@/lib/redux/slice/Item'
 import { toggle } from '@/lib/redux/slice/toggler'
 import { switchSideBarPage} from '@/lib/redux/slice/sidebarFlow'
 import { BackBtn } from '../../comp/BackBtn/BackBtn'
-import { BsArrowLeft} from 'react-icons/bs'
+
 
 export const CreatedItemPage = () => {
     const dispatch = useDispatch()
@@ -26,9 +26,7 @@ export const CreatedItemPage = () => {
   return (
     <section className={styles.createdItem_section}>
         <div className={styles.cont}>
-            <BackBtn onClick={goBack} text='Back'>
-                <BsArrowLeft/>
-            </BackBtn>
+            <BackBtn onClick={goBack} text='Back' />  
             <div className={styles.image}>
                 <Image
                     src={defaultImage}
