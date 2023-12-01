@@ -6,7 +6,9 @@ import { useState, ChangeEvent } from 'react'
 import { Button, Options } from '../../comp'
 import styles from './CreateItem.module.scss'
 import { Item } from '@/utils/interfaces'
-import { v4 as uuidv4 } from 'uuid';7
+import { v4 as uuidv4 } from 'uuid';
+import { capitalizeText } from "@/hooks/useCapitalize";
+7
 
 
 const initialInput: Item = {
@@ -31,16 +33,17 @@ export const CreateItem = () => {
     const {name, value} = e.target
     setInputVal({
       ...inputVal,
-      [name]: value
+      [name]: value.toLowerCase()
     })
   }
 
   // set active options
   const handleDropdown = (e: any) => {
     const {textContent} = e.target
-    setActive(textContent)
+    const category = textContent.toLowerCase()
+    setActive(category)
     setInputVal(prev => (
-      {...prev, category: textContent}
+      {...prev, category: category}
     ))
   }
   
@@ -48,6 +51,7 @@ export const CreateItem = () => {
   const handleSubmit = (e: any) => {
     e.preventDefault(); 
     dispatch(saveNewItem(inputVal))
+    console.log(inputVal)
     dispatch(switcher('CreatedItemPage'))
   };
 

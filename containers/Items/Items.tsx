@@ -4,15 +4,15 @@ import type { RootState } from "@/lib/redux/store/store";
 import { AiOutlineSearch } from "react-icons/ai"
 import styles from './Items.module.scss'
 import { ItemsCategory } from "@/comp";
+import { categorySet } from "@/utils/categorySet";
+import { filterByCategory } from "@/utils/filterByCategory";
 
 
 export const Items = () => {
   //connecting to redux store
   const itemList = useSelector((state:RootState) => state.Items.value);
-  //extract unique categories using Set and map
-  const categorySet = new Set(itemList.map(item => item.category)) 
-  // convert the Set to an array
-  const categoryList = Array.from(categorySet)
+  const categoryList = categorySet(itemList)
+  console.log(itemList)
   
   return (
     <section className={styles.item_sec}>
@@ -27,7 +27,7 @@ export const Items = () => {
         </div>
         <div className={styles.item_main}>
           {categoryList.map((category, index)=>(
-            <ItemsCategory key={index} title={category}/>
+            <ItemsCategory key={index} title={category} items={filterByCategory(itemList, category)}/>
           ))}
         </div>
     </section>

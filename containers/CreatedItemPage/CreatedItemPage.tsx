@@ -15,8 +15,8 @@ export const CreatedItemPage = () => {
     const newItem = useSelector((state:RootState) => state.Items.newItem )
     const defaultNote = 'You just created an item for your shopping lists. Do well to add this item to the list for your convenience'
     
-    function addToList(){
-        dispatch(createItem(newItem!))
+    function addToList(){3
+        dispatch(createItem())
         dispatch(switchSideBarPage('EditPage'))
         dispatch(toggle(false))
     }

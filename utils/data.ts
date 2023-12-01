@@ -13,10 +13,10 @@ export const itemData: Item[] =  [
 
 export const singleItem: Item = {
     id: uuidv4(),
-    name: 'Avocado', 
+    name: '', 
     image: '', 
     note: '', 
-    category: 'fruit and vegetables', 
+    category: '', 
     quantity: 0,
     completed: false
 } 
