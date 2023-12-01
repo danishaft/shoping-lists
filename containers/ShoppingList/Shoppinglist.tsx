@@ -13,6 +13,7 @@ import { saveToHistoryList } from "@/lib/redux/slice/history"
 import { ListModal } from "@/comp/ListModal/ListModal"
 import { formatDate } from "@/utils/formatDate"
 import { v4 as uuidv4 } from 'uuid';
+import { toast } from "react-toastify";
 
 
 const ShoppingList: React.FC = () => {
@@ -39,7 +40,9 @@ const ShoppingList: React.FC = () => {
   };
   const handleComplete = () => {
     dispatchClearList()
-    dispatchSaveToHistory({id: uuidv4(), name: inputVal, shoppingList: list, date: formattedDate, status: "completed"})
+    dispatchSaveToHistory({id: uuidv4(), name: inputVal, shoppingList: list, date: formattedDate, status: "completed"});
+    toast.info(`${inputVal} has been successfully saved!`, {
+      position: "top-center",})
     setInputVal('')
   }
   //
@@ -48,6 +51,8 @@ const ShoppingList: React.FC = () => {
   }
   const clearShoppingList = () => {
     dispatchClearList()
+    dispatchSaveToHistory({id: uuidv4(), name: inputVal, shoppingList: list, date: formattedDate, status: "cancelled"})
+    toast.error("All items have been cleared.",{position:"top-center"});
     dispatchOpenModal()
     setInputVal('')
   }

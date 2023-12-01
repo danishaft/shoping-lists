@@ -3,7 +3,7 @@ import { AiOutlinePlus } from "react-icons/ai";
 import styles from './ItemsCard.module.scss'
 import {toggle} from '../../lib/redux/slice/toggler'
 import {addToList} from '../../lib/redux/slice/shopingList'
-import { memo, useCallback, useEffect } from "react";
+import { memo, useCallback} from "react";
 import { Item } from "@/utils/interfaces";
 import { capitalizeText } from "@/hooks/useCapitalize";
 import { useAction } from "@/lib/redux/hooks";

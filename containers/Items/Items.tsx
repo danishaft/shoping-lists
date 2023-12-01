@@ -12,7 +12,6 @@ export const Items = () => {
   //connecting to redux store
   const itemList = useSelector((state:RootState) => state.Items.value);
   const categoryList = categorySet(itemList)
-  console.log(itemList)
   
   return (
     <section className={styles.item_sec}>
