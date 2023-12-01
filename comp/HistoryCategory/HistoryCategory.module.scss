@@ -1,0 +1,16 @@
+@use '../../styles/responsive' as r;
+@use '../../styles/global' as g;
+
+.history_category{
+    width: 100%;
+    margin-bottom: 2em;
+}
+.history_category h3{
+    @include g.text-base;
+    margin-bottom: .5em;
+}
+.history_category .list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+}

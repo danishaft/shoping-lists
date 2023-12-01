@@ -1,0 +1,7 @@
+@use '../../styles/responsive' as r;
+@use '../../styles/global' as g;
+
+
+.month_sec h3{
+    @include g.text-mini;
+}

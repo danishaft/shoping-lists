@@ -2,8 +2,8 @@
 import { useSelector } from "react-redux";
 import type { RootState } from "@/lib/redux/store/store";
 import { AiOutlineSearch } from "react-icons/ai"
-import ItemsCategory from "@/comp/ItemsCategory/ItemsCategory";
 import styles from './Items.module.scss'
+import { ItemsCategory } from "@/comp";
 
 
 export const Items = () => {

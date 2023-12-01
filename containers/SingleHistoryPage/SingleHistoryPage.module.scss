@@ -4,4 +4,13 @@
 .singleHistory_container{
     width: 95%;
     margin: 0 auto;
+    padding-top: 1em;
+}
+
+.singleHistory_container h2 {
+    @include g.text-bg1;
+    margin-bottom: .2em;
+}
+.singleHistory_container  .list{
+    margin-top: 1.5em;
 }

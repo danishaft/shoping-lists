@@ -9,22 +9,21 @@ interface ItemsCategoryProps {
   title: string
 }
 
-const ItemsCategory: React.FC<ItemsCategoryProps> = ({title}) => {
-//redux state
-  const data = useSelector((state:RootState) => state.Items.value) 
-  //filter items based on category
-  const filterItem = useMemo(() => data.filter(item => capitalizeText(title) === capitalizeText(item.category) ), [data, title])
-  
-  return (
-    <div className={styles.category}>
-      <h2>{capitalizeText(title)}</h2>
-        <div className={styles.list}>
-          {filterItem.map((item, index) => (
-            <ItemsCard key={index} item={item}/>
-          ))}
-        </div>
-    </div>
-  )
-}
+export const ItemsCategory: React.FC<ItemsCategoryProps> = memo(function ItemsCategory({title}){
+  //redux state
+    const data = useSelector((state:RootState) => state.Items.value) 
+    //filter items based on category
+    const filterItem = useMemo(() => data.filter(item => capitalizeText(title) === capitalizeText(item.category) ), [data, title])
+    
+    return (
+      <div className={styles.category}>
+        <h2>{capitalizeText(title)}</h2>
+          <div className={styles.list}>
+            {filterItem.map((item, index) => (
+              <ItemsCard key={index} item={item}/>
+            ))}
+          </div>
+      </div>
+    )
+  })
 
-export default memo(ItemsCategory)

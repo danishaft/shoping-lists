@@ -1,18 +1,21 @@
 import { MonthSectionProps } from "@/utils/interfaces";
 import { memo } from "react";
 import { HistoryCard } from "..";
+import styles from './MonthSection.module.scss'
 
 export const MonthSection: React.FC<MonthSectionProps> = memo(function MonthSection({monthName, history}){
-    console.log( history)
+    
     return (
-        <div className="">
+        <div className={styles.month_sec}>
             <h3>{ monthName }</h3>
-            {history.map((item, index) => (
-                <HistoryCard
-                    key={index}
-                    historyItem={item}
-                />
-            ))}
+            <div className={styles.list}>
+                {history.map((item, index) => (
+                    <HistoryCard
+                        key={index}
+                        historyItem={item}
+                    />
+                ))}
+            </div>
         </div>
     )
 })

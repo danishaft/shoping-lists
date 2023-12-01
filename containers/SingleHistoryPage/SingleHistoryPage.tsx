@@ -8,6 +8,7 @@ import { RootState } from "@/lib/redux/store/store";
 import { History, Item } from "@/utils/interfaces";
 import { categorySet } from "@/utils/categorySet";
 import { filterByCategory } from "@/utils/filterByCategory";
+import { capitalizeText } from "@/hooks/useCapitalize";
 
 export const SingleHistoryPage: React.FC<{id: string}> = memo(function SingleHistoryPage({id}){
   const router = useRouter()
@@ -18,15 +19,16 @@ export const SingleHistoryPage: React.FC<{id: string}> = memo(function SingleHis
   
   return(
     <section className={styles.singleHistory_container}>
-      SingleHistoryPage: {id}
       <BackBtn text={'back'} onClick={() => router.back()}/>
-      <h2><b>{name}</b></h2>
+      <h2><b>{capitalizeText(name)}</b></h2>
       <Date date={date}/>
-      {
-        categories.map((category, index) => (
-          <HistoryCategory key={index} categoryName={category} items={filterByCategory(shoppingList, category)}/>
-        ))
-      }
+      <div className={styles.list}>
+        {
+          categories.map((category, index) => (
+            <HistoryCategory key={index} categoryName={category} items={filterByCategory(shoppingList, category)}/>
+          ))
+        }
+      </div>
     </section>
   )
 })

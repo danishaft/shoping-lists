@@ -1,5 +1,6 @@
 
 export * from './ItemsCard'
+export * from './ItemsCategory'
 export * from './Button'
 export * from './Options'
 export * from './BackBtn'
