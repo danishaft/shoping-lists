@@ -13,7 +13,10 @@ export const HistoryCard: React.FC<{historyItem: History}> = memo(function Histo
   return (
     <div className={styles.history_card}>
         <p className={styles.name}>{capitalizeText(historyItem.name)}</p>
-        <Date date={formatDate}/>
+        {/* Show Date component only on larger screens */}
+        <div className={styles.date_container}>
+          <Date date={formatDate} />
+        </div>
         <HistoryStatus status={historyItem.status}/>
         <Link href={`/history/${historyItem.id}`}><FaChevronRight  className={styles.chevron}/></Link>
     </div>

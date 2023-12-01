@@ -19,9 +19,19 @@
 .history_card .name{
     @include g.text-header;
     font-weight: bold;
-    
+    margin-right: auto;
+}
+.history_card .date_container{
+    display: none;
 }
 .chevron{
     color: g.$primary-orange;
     cursor: pointer;
+}
+
+//responsiveness
+@include r.big-phone{
+    .history_card .date_container{
+        display: block;
+    }
 }
