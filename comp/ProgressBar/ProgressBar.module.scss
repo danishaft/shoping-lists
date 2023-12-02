@@ -1,0 +1,15 @@
+@use '../../styles/global' as g;
+@use '../../styles/responsive' as r;
+.progress_cont{
+    margin-bottom: 1em;
+}
+.progress_details{
+    display: flex;
+    justify-content: space-between;
+}
+.progress_details h3{
+    @include g.text-sm;
+}
+.progress_details p{
+    @include g.text-base;
+}

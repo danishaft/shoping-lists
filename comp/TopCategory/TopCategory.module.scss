@@ -1,16 +1,16 @@
 @use '../../styles/global' as g;
 @use '../../styles/responsive' as r;
-.top_items{
+.top_categories{
     width: 100%;
 }
-.top_items h2{
+.top_categories h2{
     @include g.text-bg;
     margin: 1em 0;
 }
-  
+ 
 //responsiveness
 @include r.tablet{
-    .top_items{
+    .top_categories{
         width: 45%;
     }
 }

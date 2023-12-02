@@ -24,3 +24,12 @@ export interface MonthSectionProps {
   monthName: string,
   history: History[],
 }
+export interface StatsItem{
+  name: string,
+  percentage: number
+}
+
+export interface TopItemAndCategories {
+  topItems: StatsItem[];
+  topCategories: StatsItem[]
+}

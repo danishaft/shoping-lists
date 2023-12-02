@@ -6,3 +6,11 @@
     margin: 0 auto;
     
 }
+
+//responsiveness
+@include r.tablet{
+    .allProgress_sec{
+        display: flex;
+        justify-content: space-between;
+    }
+}
