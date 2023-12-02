@@ -13,6 +13,7 @@ export const ProgressBar: React.FC<{ bgcolor: string, percentage: number , title
       const fillerStyles = {
         height: '100%',
         width: `${percentage}%`,
+        transition: 'width 1s ease-in-out',
         backgroundColor: bgcolor,
         borderRadius: 'inherit',
       }
