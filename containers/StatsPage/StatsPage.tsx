@@ -1,5 +1,5 @@
 'use client'
-import { TopCategory, TopItems } from '@/comp'
+import { Chart, TopCategory, TopItems } from '@/comp'
 import styles from './StatsPage.module.scss'
 import { useSelector } from "react-redux"
 import { calcTopItemsAndCategory } from '@/utils/calcTopItemAndCategories'
@@ -15,6 +15,7 @@ export const StatsPage = () => {
         <TopItems topItemsList={topItemAndCategoryList.topItems}/>
         <TopCategory topCategoriesList={topItemAndCategoryList.topCategories}/>
       </div>
+      <Chart/>
     </section>
   )
 }

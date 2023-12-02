@@ -1,0 +1,8 @@
+@use '../../styles/global' as g;
+@use '../../styles/responsive' as r;
+.chart_cont{
+    margin: 1.5em 0;
+}
+.chart_cont h2{
+    @include g.text-bg0;
+}
