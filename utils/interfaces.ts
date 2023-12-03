@@ -1,3 +1,4 @@
+
 import { shoppingList } from './../lib/redux/slice/shopingList';
 export interface Input {
     name: string;
@@ -10,6 +11,7 @@ export interface Input {
     id: string
     quantity: number
     completed: boolean
+    date: Date
 }
 
 export interface History {
@@ -28,8 +30,15 @@ export interface StatsItem{
   name: string,
   percentage: number
 }
+export interface HistoricalMonthData{
+  month: string
+  monthNum: number
+  year: number
+  count: number
+}
 
 export interface TopItemAndCategories {
   topItems: StatsItem[];
   topCategories: StatsItem[]
+  topHistoricalMonthData: HistoricalMonthData[]
 }

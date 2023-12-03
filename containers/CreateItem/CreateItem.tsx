@@ -8,6 +8,7 @@ import styles from './CreateItem.module.scss'
 import { Item } from '@/utils/interfaces'
 import { v4 as uuidv4 } from 'uuid';
 import { capitalizeText } from "@/hooks/useCapitalize";
+import { formatDate } from "@/utils/formatDate";
 7
 
 
@@ -19,6 +20,7 @@ const initialInput: Item = {
   category: '',
   quantity: 0,
   completed: false,
+  date: new Date()
 };
 
 export const CreateItem = () => {

@@ -15,7 +15,7 @@ export const StatsPage = () => {
         <TopItems topItemsList={topItemAndCategoryList.topItems}/>
         <TopCategory topCategoriesList={topItemAndCategoryList.topCategories}/>
       </div>
-      <Chart/>
+      <Chart data={topItemAndCategoryList.topHistoricalMonthData}/>
     </section>
   )
 }
