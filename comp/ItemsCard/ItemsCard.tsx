@@ -41,7 +41,8 @@ export const ItemsCard: React.FC<{item: Item}> = memo(function ItemsCard({item}:
   return (
     <span role="article" className={styles.item_card}>
       <p>{capitalizeText(item.name)}</p>
-      <button role="button" className={styles.btn} onClick={addItem}><AiOutlinePlus className={styles.icon}/></button>
+      <button role="button" className={styles.btn} onClick={addItem}><AiOutlinePlus onClick={addItem}/></button>
+      {/* <AiOutlinePlus className={styles.icon} onClick={addItem}/> */}
     </span>
   )
 });
