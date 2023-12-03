@@ -10,7 +10,20 @@
         justify-content: center;
         align-items: center;
         cursor: pointer;
-    }
-    .cart_Icon > * {
+}
+.cart_Icon > * {
         color: #ffff;
+}
+.desktop{
+    display: none;
+}
+
+//responsiveness
+@include r.small-desktop{
+    .desktop{
+        display: flex;
     }
+    .mobile{
+        display: none;
+    }
+}

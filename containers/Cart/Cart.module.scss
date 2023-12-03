@@ -3,15 +3,11 @@
 
 .aside {
     position: fixed;
-    // width: 85%;
     transition: transform 0.3s ease-in-out;
     right: 0;
     bottom: 0;
     left: 15%;
     top: 0;
-    // max-height: 100vh;
-    // overflow-x: scroll;
-    // border: 1px solid red;
 }
 .aside[data-visible="false"] {
     transform: translateX(100%);
@@ -23,24 +19,29 @@
 .aside__header {
     display: flex;
 }
-
+.desktop{
+    display: none;
+}
 //responsiveness
 @include r.tablet{
     .aside{
-        // left: 40%;
         left: 60%;
     }
 }
 
 @include r.small-desktop{
     .aside {
-        // left: 32%;
         left: 68%;
+    }
+    .mobile{
+        display: none;
+    }
+    .desktop{
+        display: block;
     }
 }
 @include r.mid-desktop{
     .aside {
-        // left: 24%;
         left: 76%;
     }
 }

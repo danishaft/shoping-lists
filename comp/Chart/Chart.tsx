@@ -10,7 +10,7 @@ export const Chart: React.FC<{data: HistoricalMonthData[]}> = memo(function Char
     return (
         <div className={styles.chart_cont}>
             <h2>Monthly Summary</h2>
-            <LineChart width={200} height={300} data={data} margin={{ top: 40, right: 0, left: -25, bottom: 5 }}>
+            <LineChart width={300} height={300} data={data} margin={{ top: 40, right: 0, left: -25, bottom: 5 }}>
                 <Line type="monotone" dataKey="count" stroke="#F9A109" />
                 <CartesianGrid stroke="#ccc" strokeDasharray="5 5"/>
                 <XAxis dataKey="month" strokeDasharray={'5,5'}/>

@@ -6,7 +6,7 @@ import styles from './ShoppingList.module.scss'
 import { RootState } from "@/lib/redux/store/store"
 import ListName from "@/comp/ListName/ListName"
 import { ChangeEvent, FormEvent, memo, useState } from "react"
-import { Button, ShoppingListBtm } from "@/comp"
+import { ShoppingListBtm } from "@/comp"
 import { useAction } from "@/lib/redux/hooks"
 import { cancelList, clearList, saveList } from "@/lib/redux/slice/shopingList"
 import { saveToHistoryList } from "@/lib/redux/slice/history"

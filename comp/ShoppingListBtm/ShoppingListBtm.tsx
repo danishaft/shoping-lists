@@ -1,4 +1,4 @@
-import { ChangeEvent, FormEvent, memo, useState } from 'react'
+import { ChangeEvent, FormEvent, memo, } from 'react'
 import styles from './index.module.scss'
 import { Button } from '..'
 

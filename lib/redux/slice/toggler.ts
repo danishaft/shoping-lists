@@ -7,7 +7,7 @@ export interface TogglerState {
 }
 
 const initialState: TogglerState = {
-    value: true,
+    value: false,
 }
 
 export const togglerSlice = createSlice({
